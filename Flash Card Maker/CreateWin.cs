@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Flash_Card_Maker
 {
-    public partial class Form1 : Form
+    public partial class CreateWin : Form
     {
-        public Form1()
+        public CreateWin()
         {
             InitializeComponent();
         }
 
+        private void addCardButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveSetButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

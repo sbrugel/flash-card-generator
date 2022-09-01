@@ -1,7 +1,7 @@
 ﻿
 namespace Flash_Card_Maker
 {
-    partial class Form1
+    partial class CreateWin
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,15 +31,15 @@ namespace Flash_Card_Maker
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.setNameText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cardFrontText = new System.Windows.Forms.TextBox();
+            this.cardBackText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addCardButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveSetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,12 +62,12 @@ namespace Flash_Card_Maker
             this.label2.TabIndex = 1;
             this.label2.Text = "Name of Set";
             // 
-            // textBox1
+            // setNameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 23);
-            this.textBox1.TabIndex = 2;
+            this.setNameText.Location = new System.Drawing.Point(13, 64);
+            this.setNameText.Name = "setNameText";
+            this.setNameText.Size = new System.Drawing.Size(349, 23);
+            this.setNameText.TabIndex = 2;
             // 
             // label3
             // 
@@ -88,19 +88,19 @@ namespace Flash_Card_Maker
             this.label4.TabIndex = 4;
             this.label4.Text = "Front";
             // 
-            // textBox2
+            // cardFrontText
             // 
-            this.textBox2.Location = new System.Drawing.Point(55, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(307, 23);
-            this.textBox2.TabIndex = 5;
+            this.cardFrontText.Location = new System.Drawing.Point(55, 118);
+            this.cardFrontText.Name = "cardFrontText";
+            this.cardFrontText.Size = new System.Drawing.Size(307, 23);
+            this.cardFrontText.TabIndex = 5;
             // 
-            // textBox3
+            // cardBackText
             // 
-            this.textBox3.Location = new System.Drawing.Point(55, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(307, 23);
-            this.textBox3.TabIndex = 7;
+            this.cardBackText.Location = new System.Drawing.Point(55, 147);
+            this.cardBackText.Name = "cardBackText";
+            this.cardBackText.Size = new System.Drawing.Size(307, 23);
+            this.cardBackText.TabIndex = 7;
             // 
             // label5
             // 
@@ -111,14 +111,15 @@ namespace Flash_Card_Maker
             this.label5.TabIndex = 6;
             this.label5.Text = "Back";
             // 
-            // button1
+            // addCardButton
             // 
-            this.button1.Location = new System.Drawing.Point(316, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addCardButton.Location = new System.Drawing.Point(316, 176);
+            this.addCardButton.Name = "addCardButton";
+            this.addCardButton.Size = new System.Drawing.Size(46, 23);
+            this.addCardButton.TabIndex = 8;
+            this.addCardButton.Text = "Add";
+            this.addCardButton.UseVisualStyleBackColor = true;
+            this.addCardButton.Click += new System.EventHandler(this.addCardButton_Click);
             // 
             // dataGridView1
             // 
@@ -129,33 +130,34 @@ namespace Flash_Card_Maker
             this.dataGridView1.Size = new System.Drawing.Size(348, 226);
             this.dataGridView1.TabIndex = 9;
             // 
-            // button2
+            // saveSetButton
             // 
-            this.button2.Location = new System.Drawing.Point(14, 437);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(346, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Save Set";
-            this.button2.UseVisualStyleBackColor = true;
+            this.saveSetButton.Location = new System.Drawing.Point(14, 437);
+            this.saveSetButton.Name = "saveSetButton";
+            this.saveSetButton.Size = new System.Drawing.Size(346, 23);
+            this.saveSetButton.TabIndex = 10;
+            this.saveSetButton.Text = "Save Set";
+            this.saveSetButton.UseVisualStyleBackColor = true;
+            this.saveSetButton.Click += new System.EventHandler(this.saveSetButton_Click);
             // 
-            // Form1
+            // CreateWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 466);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.saveSetButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.addCardButton);
+            this.Controls.Add(this.cardBackText);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cardFrontText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.setNameText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CreateWin";
+            this.Text = "Create Set";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,15 +168,15 @@ namespace Flash_Card_Maker
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox setNameText;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox cardFrontText;
+        private System.Windows.Forms.TextBox cardBackText;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addCardButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveSetButton;
     }
 }
 
