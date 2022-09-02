@@ -33,11 +33,12 @@ namespace Flash_Card_Maker
             this.setTitleText = new System.Windows.Forms.Label();
             this.previousButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
+            this.shuffleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flashCard
             // 
-            this.flashCard.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.flashCard.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.flashCard.Location = new System.Drawing.Point(12, 57);
             this.flashCard.Name = "flashCard";
             this.flashCard.Size = new System.Drawing.Size(491, 285);
@@ -65,6 +66,7 @@ namespace Flash_Card_Maker
             this.previousButton.TabIndex = 2;
             this.previousButton.Text = "Previous";
             this.previousButton.UseVisualStyleBackColor = true;
+            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
             // nextButton
             // 
@@ -74,12 +76,24 @@ namespace Flash_Card_Maker
             this.nextButton.TabIndex = 3;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // shuffleButton
+            // 
+            this.shuffleButton.Location = new System.Drawing.Point(223, 348);
+            this.shuffleButton.Name = "shuffleButton";
+            this.shuffleButton.Size = new System.Drawing.Size(75, 23);
+            this.shuffleButton.TabIndex = 4;
+            this.shuffleButton.Text = "Shuffle";
+            this.shuffleButton.UseVisualStyleBackColor = true;
+            this.shuffleButton.Click += new System.EventHandler(this.shuffleButton_Click);
             // 
             // ViewWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 450);
+            this.ClientSize = new System.Drawing.Size(518, 385);
+            this.Controls.Add(this.shuffleButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.previousButton);
             this.Controls.Add(this.setTitleText);
@@ -97,5 +111,6 @@ namespace Flash_Card_Maker
         private System.Windows.Forms.Label setTitleText;
         private System.Windows.Forms.Button previousButton;
         private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button shuffleButton;
     }
 }

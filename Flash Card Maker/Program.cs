@@ -18,6 +18,7 @@ namespace Flash_Card_Maker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ViewWin());
+            // Application.Run(new CreateWin());
         }
     }
 }

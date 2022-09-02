@@ -126,6 +126,7 @@ namespace Flash_Card_Maker
             this.cardSetData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cardSetData.Location = new System.Drawing.Point(12, 205);
             this.cardSetData.Name = "cardSetData";
+            this.cardSetData.ReadOnly = true;
             this.cardSetData.RowTemplate.Height = 25;
             this.cardSetData.Size = new System.Drawing.Size(348, 226);
             this.cardSetData.TabIndex = 9;
