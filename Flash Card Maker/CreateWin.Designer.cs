@@ -38,9 +38,9 @@ namespace Flash_Card_Maker
             this.cardBackText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.addCardButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cardSetData = new System.Windows.Forms.DataGridView();
             this.saveSetButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardSetData)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,14 +121,14 @@ namespace Flash_Card_Maker
             this.addCardButton.UseVisualStyleBackColor = true;
             this.addCardButton.Click += new System.EventHandler(this.addCardButton_Click);
             // 
-            // dataGridView1
+            // cardSetData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(348, 226);
-            this.dataGridView1.TabIndex = 9;
+            this.cardSetData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cardSetData.Location = new System.Drawing.Point(12, 205);
+            this.cardSetData.Name = "cardSetData";
+            this.cardSetData.RowTemplate.Height = 25;
+            this.cardSetData.Size = new System.Drawing.Size(348, 226);
+            this.cardSetData.TabIndex = 9;
             // 
             // saveSetButton
             // 
@@ -146,7 +146,7 @@ namespace Flash_Card_Maker
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 466);
             this.Controls.Add(this.saveSetButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cardSetData);
             this.Controls.Add(this.addCardButton);
             this.Controls.Add(this.cardBackText);
             this.Controls.Add(this.label5);
@@ -158,7 +158,7 @@ namespace Flash_Card_Maker
             this.Controls.Add(this.label1);
             this.Name = "CreateWin";
             this.Text = "Create Set";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardSetData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +175,7 @@ namespace Flash_Card_Maker
         private System.Windows.Forms.TextBox cardBackText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button addCardButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView cardSetData;
         private System.Windows.Forms.Button saveSetButton;
     }
 }
