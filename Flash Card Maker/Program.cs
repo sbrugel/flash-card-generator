@@ -17,7 +17,7 @@ namespace Flash_Card_Maker
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateWin());
+            Application.Run(new ViewWin());
         }
     }
 }

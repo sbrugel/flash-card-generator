@@ -48,7 +48,7 @@ namespace Flash_Card_Maker
                     {
                         if (row.Cells["Front"].Value == null) break;
 
-                        sw.WriteLine(row.Cells["Front"].Value + "," + row.Cells["Back"].Value);
+                        sw.WriteLine(row.Cells["Front"].Value + "|||" + row.Cells["Back"].Value);
                     }
                     MessageBox.Show("Set data saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
