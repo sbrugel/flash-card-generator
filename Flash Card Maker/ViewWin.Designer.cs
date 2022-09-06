@@ -39,10 +39,10 @@ namespace Flash_Card_Maker
             // 
             // flashCard
             // 
-            this.flashCard.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.flashCard.Location = new System.Drawing.Point(12, 57);
+            this.flashCard.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.flashCard.Location = new System.Drawing.Point(12, 42);
             this.flashCard.Name = "flashCard";
-            this.flashCard.Size = new System.Drawing.Size(491, 285);
+            this.flashCard.Size = new System.Drawing.Size(491, 300);
             this.flashCard.TabIndex = 0;
             this.flashCard.Text = "Front";
             this.flashCard.UseVisualStyleBackColor = true;
@@ -51,10 +51,10 @@ namespace Flash_Card_Maker
             // setTitleText
             // 
             this.setTitleText.AutoSize = true;
-            this.setTitleText.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.setTitleText.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.setTitleText.Location = new System.Drawing.Point(12, 9);
             this.setTitleText.Name = "setTitleText";
-            this.setTitleText.Size = new System.Drawing.Size(110, 45);
+            this.setTitleText.Size = new System.Drawing.Size(72, 30);
             this.setTitleText.TabIndex = 1;
             this.setTitleText.Text = "label1";
             this.setTitleText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,7 +92,7 @@ namespace Flash_Card_Maker
             // cardsLeftText
             // 
             this.cardsLeftText.AutoSize = true;
-            this.cardsLeftText.Location = new System.Drawing.Point(465, 39);
+            this.cardsLeftText.Location = new System.Drawing.Point(465, 21);
             this.cardsLeftText.Name = "cardsLeftText";
             this.cardsLeftText.Size = new System.Drawing.Size(38, 15);
             this.cardsLeftText.TabIndex = 5;
@@ -110,6 +110,7 @@ namespace Flash_Card_Maker
             this.Controls.Add(this.previousButton);
             this.Controls.Add(this.setTitleText);
             this.Controls.Add(this.flashCard);
+            this.MaximizeBox = false;
             this.Name = "ViewWin";
             this.Text = "View Flash Card Set";
             this.ResumeLayout(false);

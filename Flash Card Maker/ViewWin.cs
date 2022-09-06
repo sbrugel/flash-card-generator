@@ -8,8 +8,6 @@ namespace Flash_Card_Maker
 {
     public partial class ViewWin : Form
     {
-        readonly string loadFrom = "C:\\Users\\sbrug\\Desktop\\discrete.fcards";
-
         List<string> frontContents = new List<string>();
         List<string> backContents = new List<string>();
 
@@ -18,7 +16,7 @@ namespace Flash_Card_Maker
 
         private static Random rng = new Random();
 
-        public ViewWin()
+        public ViewWin(string loadFrom)
         {
             InitializeComponent();
             using (StreamReader sr = File.OpenText(loadFrom))
@@ -39,13 +37,14 @@ namespace Flash_Card_Maker
             isFront = true;
             flashCard.Text = frontContents[index];
             cardsLeftText.Text = (index + 1) + " / " + frontContents.Count;
+            flashCard.Font = new System.Drawing.Font("Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
         }
 
         private void flashCard_Click(object sender, System.EventArgs e)
         {
             isFront = !isFront;
             flashCard.Text = !isFront ? backContents[listIterator] : frontContents[listIterator];
-            // flashCard.Font = new System.Drawing.Font("Segoe UI", !isFront ? 14 : 28);
+            flashCard.Font = new System.Drawing.Font("Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
         }
 
         private void previousButton_Click(object sender, System.EventArgs e)

@@ -6,12 +6,25 @@ namespace Flash_Card_Maker
 {
     public partial class CreateWin : Form
     {
-        public CreateWin()
+        public CreateWin(string loadFrom = "")
         {
             InitializeComponent();
             cardSetData.ColumnCount = 2;
             cardSetData.Columns[0].Name = "Front";
             cardSetData.Columns[1].Name = "Back";
+
+            if (!loadFrom.Equals(""))
+            {
+                using (StreamReader sr = File.OpenText(loadFrom))
+                {
+                    string s = "";
+                    setNameText.Text = sr.ReadLine();
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        cardSetData.Rows.Add(new object[] { s.Split("|||")[0], s.Split("|||")[1] });
+                    }
+                }
+            }
         }
 
         private void addCardButton_Click(object sender, EventArgs e)
