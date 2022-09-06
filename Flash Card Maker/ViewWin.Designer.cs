@@ -34,6 +34,7 @@ namespace Flash_Card_Maker
             this.previousButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
             this.shuffleButton = new System.Windows.Forms.Button();
+            this.cardsLeftText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flashCard
@@ -88,11 +89,22 @@ namespace Flash_Card_Maker
             this.shuffleButton.UseVisualStyleBackColor = true;
             this.shuffleButton.Click += new System.EventHandler(this.shuffleButton_Click);
             // 
+            // cardsLeftText
+            // 
+            this.cardsLeftText.AutoSize = true;
+            this.cardsLeftText.Location = new System.Drawing.Point(465, 39);
+            this.cardsLeftText.Name = "cardsLeftText";
+            this.cardsLeftText.Size = new System.Drawing.Size(38, 15);
+            this.cardsLeftText.TabIndex = 5;
+            this.cardsLeftText.Text = "label1";
+            this.cardsLeftText.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // ViewWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 385);
+            this.Controls.Add(this.cardsLeftText);
             this.Controls.Add(this.shuffleButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.previousButton);
@@ -112,5 +124,6 @@ namespace Flash_Card_Maker
         private System.Windows.Forms.Button previousButton;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button shuffleButton;
+        private System.Windows.Forms.Label cardsLeftText;
     }
 }

@@ -8,7 +8,7 @@ namespace Flash_Card_Maker
 {
     public partial class ViewWin : Form
     {
-        readonly string loadFrom = "C:\\Users\\Simon\\Desktop\\discrete.fcards";
+        readonly string loadFrom = "C:\\Users\\sbrug\\Desktop\\discrete.fcards";
 
         List<string> frontContents = new List<string>();
         List<string> backContents = new List<string>();
@@ -38,6 +38,7 @@ namespace Flash_Card_Maker
         {
             isFront = true;
             flashCard.Text = frontContents[index];
+            cardsLeftText.Text = (index + 1) + " / " + frontContents.Count;
         }
 
         private void flashCard_Click(object sender, System.EventArgs e)
@@ -64,12 +65,13 @@ namespace Flash_Card_Maker
             if (listIterator == frontContents.Count)
             {
                 listIterator = 0;
-                MessageBox.Show("Reached the end of the set. Going to the first card of the set.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Reached the end of the set. Going to the first card of the set. Would you like to shuffle the deck before continuing?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dr == DialogResult.Yes) ShuffleDeck();
             }
             UpdateCardContents(listIterator);
         }
 
-        private void shuffleButton_Click(object sender, System.EventArgs e)
+        private void ShuffleDeck()
         {
             int[] indices = new int[frontContents.Count];
             int i = 0;
@@ -95,6 +97,11 @@ namespace Flash_Card_Maker
 
             listIterator = 0;
             UpdateCardContents(listIterator);
+        }
+
+        private void shuffleButton_Click(object sender, System.EventArgs e)
+        {
+            ShuffleDeck();
 
             MessageBox.Show("Set shuffled. Going to the first card of the set.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

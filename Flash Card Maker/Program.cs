@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Flash_Card_Maker
@@ -18,7 +15,7 @@ namespace Flash_Card_Maker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ViewWin());
-            // Application.Run(new CreateWin());
+            //Application.Run(new CreateWin());
         }
     }
 }
