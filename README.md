@@ -17,12 +17,12 @@ To delete a row, click on the `*` on the furthest left of a row and hit the `DEL
 ### A UI to view user-created flash cards. 
 Users can load sets of flash cards on their computer for reviewing. They can press a big button on the center of the window to swap between front and back contents. They have the option to switch to the next/previous card and shuffle the set at any time.
 
-![image](https://i.imgur.com/mMB4aLW.gif)
+![image](https://i.imgur.com/G6zwRkO.gif)
 
 ### Automatic scaling font based on card contents' length. 
 This allows users to enter longer strings for cards (e.g. for lengthy definitions), and the font will re-scale so that the user can see all contents of the card regardless of their length.
 
-![image](https://i.imgur.com/nPdOwsD.gif)
+![image](https://i.imgur.com/fi76zNc.gif)
 
 ## Donate (if you want)
 

@@ -37,14 +37,16 @@ namespace Flash_Card_Maker
             isFront = true;
             flashCard.Text = frontContents[index];
             cardsLeftText.Text = (index + 1) + " / " + frontContents.Count;
-            flashCard.Font = new System.Drawing.Font("Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
+            flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
+            flashCard.BackColor = System.Drawing.ColorTranslator.FromHtml(isFront ? "#ffbfbf" : "#bfddff");
         }
 
         private void flashCard_Click(object sender, System.EventArgs e)
         {
             isFront = !isFront;
             flashCard.Text = !isFront ? backContents[listIterator] : frontContents[listIterator];
-            flashCard.Font = new System.Drawing.Font("Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
+            flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
+            flashCard.BackColor = System.Drawing.ColorTranslator.FromHtml(isFront ? "#ffbfbf" : "#bfddff");
         }
 
         private void previousButton_Click(object sender, System.EventArgs e)

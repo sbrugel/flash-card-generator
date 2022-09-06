@@ -40,6 +40,7 @@ namespace Flash_Card_Maker
             // flashCard
             // 
             this.flashCard.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.flashCard.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flashCard.Location = new System.Drawing.Point(12, 42);
             this.flashCard.Name = "flashCard";
             this.flashCard.Size = new System.Drawing.Size(491, 300);
