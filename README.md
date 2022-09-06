@@ -1,9 +1,7 @@
 # Flash Card Generator
-A C# GUI application that allows users to create and look over sets of flash cards, saved locally on their computer.
+A C# GUI application built in Windows Forms that allows users to create and look over sets of flash cards, saved locally on their computer.
 
 I created this as I wanted to avoid the BS online services offer for this purpose (e.g. needing to create an account or having to pay) while being able to review college material without an internet connection. After all, if you want something done right, do it yourself.
-
-This program was built in Windows Forms, which, despite the name, should still work on MacOS, Linux etc.
 
 ## Features
 
