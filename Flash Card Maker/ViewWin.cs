@@ -34,8 +34,7 @@ namespace Flash_Card_Maker
 
         private void UpdateCardContents(int index)
         {
-            isFront = true;
-            flashCard.Text = frontContents[index];
+            flashCard.Text = isFront ? frontContents[index] : backContents[index];
             cardsLeftText.Text = (index + 1) + " / " + frontContents.Count;
             flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
             flashCard.BackColor = System.Drawing.ColorTranslator.FromHtml(isFront ? "#ffbfbf" : "#bfddff");
