@@ -8,6 +8,8 @@ namespace Flash_Card_Maker
 {
     public partial class ViewWin : Form
     {
+        readonly double SCALE_RATIO = 120.0;
+
         List<string> frontContents = new List<string>();
         List<string> backContents = new List<string>();
 
@@ -36,7 +38,7 @@ namespace Flash_Card_Maker
         {
             flashCard.Text = isFront ? frontContents[index] : backContents[index];
             cardsLeftText.Text = (index + 1) + " / " + frontContents.Count;
-            flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 165.0)));
+            flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / SCALE_RATIO)));
             flashCard.BackColor = System.Drawing.ColorTranslator.FromHtml(isFront ? "#ffbfbf" : "#bfddff");
         }
 
@@ -44,7 +46,7 @@ namespace Flash_Card_Maker
         {
             isFront = !isFront;
             flashCard.Text = !isFront ? backContents[listIterator] : frontContents[listIterator];
-            flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / 120.0)));
+            flashCard.Font = new System.Drawing.Font(isFront ? "Segoe UI Black" : "Segoe UI", Convert.ToInt32(28 / Math.Ceiling(flashCard.Text.Length / SCALE_RATIO)));
             flashCard.BackColor = System.Drawing.ColorTranslator.FromHtml(isFront ? "#ffbfbf" : "#bfddff");
         }
 
