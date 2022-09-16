@@ -47,6 +47,15 @@ namespace Flash_Card_Maker
                 return;
             }
 
+            for (int i = 0; i < cardSetData.Rows.Count - 1; i++)
+            {
+                if (cardSetData.Rows[i].Cells["Front"].Value == null || cardSetData.Rows[i].Cells["Back"].Value == null)
+                {
+                    MessageBox.Show("One or more cards are missing either front or back contents, cannot save.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Flash Card Set|*.fcards";
             dialog.Title = "Save Set";
