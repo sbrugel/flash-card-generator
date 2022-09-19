@@ -14,6 +14,9 @@ namespace Flash_Card_Maker
     {
         List<string> front = new List<string>();
         List<string> back = new List<string>();
+        List<string> allAnswers = new List<string>();
+
+        char correctButton = 'X';
 
         private readonly static Random rng = new Random();
 
@@ -55,31 +58,52 @@ namespace Flash_Card_Maker
 
             back = shuffledBack;
             front = shuffledFront;
+            
+            foreach (string item in front) // deep copy of all front contents
+            {
+                allAnswers.Add(item);
+            }
 
             GenerateQuestion();
         }
 
         private void GenerateQuestion()
         {
+            if (back.Count == 0)
+            {
+                MessageBox.Show("All questions answered!");
+                Dispose();
+                return;
+            }
+            cardsLeftText.Text = back.Count + " left";
+
             questionBox.Text = back[0];
+            buttonA.Enabled = true;
             buttonA.Text = "";
+            buttonB.Enabled = true;
             buttonB.Text = "";
+            buttonC.Enabled = true;
             buttonC.Text = "";
+            buttonD.Enabled = true;
             buttonD.Text = "";
             int correctAnswerButton = rng.Next(0, 4);
             switch (correctAnswerButton)
             {
                 case 0:
                     buttonA.Text = front[0];
+                    correctButton = 'A';
                     break;
                 case 1:
                     buttonB.Text = front[0];
+                    correctButton = 'B';
                     break;
                 case 2:
                     buttonC.Text = front[0];
+                    correctButton = 'C';
                     break;
                 case 3:
                     buttonD.Text = front[0];
+                    correctButton = 'D';
                     break;
                 default:
                     MessageBox.Show("We shouldn't be here");
@@ -91,10 +115,10 @@ namespace Flash_Card_Maker
             int i = 0;
             while (i < 3)
             {
-                do
-                {
-                    wrongAnswers[i] = front[rng.Next(front.Count)];
-                } while (wrongAnswers[i].Equals(front[0]));
+                string choice = allAnswers[rng.Next(allAnswers.Count)];
+                if (wrongAnswers.Contains(choice) || choice.Equals(front[0])) continue;
+
+                wrongAnswers[i] = choice;
                 i++;
             }
 
@@ -122,6 +146,61 @@ namespace Flash_Card_Maker
 
             back.RemoveAt(0);
             front.RemoveAt(0);
+        }
+
+        private void buttonA_Click(object sender, EventArgs e)
+        {
+            if (correctButton == 'A')
+            {
+                MessageBox.Show("That's correct!", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GenerateQuestion();
+            } else
+            {
+                MessageBox.Show("That's not correct. Keep trying!", "Inorrect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonA.Enabled = false;
+            }
+        }
+
+        private void buttonB_Click(object sender, EventArgs e)
+        {
+            if (correctButton == 'B')
+            {
+                MessageBox.Show("That's correct!", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GenerateQuestion();
+            }
+            else
+            {
+                MessageBox.Show("That's not correct. Keep trying!", "Inorrect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonB.Enabled = false;
+            }
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            if (correctButton == 'C')
+            {
+                MessageBox.Show("That's correct!", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GenerateQuestion();
+            }
+            else
+            {
+                MessageBox.Show("That's not correct. Keep trying!", "Inorrect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonC.Enabled = false;
+            }
+        }
+
+        private void buttonD_Click(object sender, EventArgs e)
+        {
+            if (correctButton == 'D')
+            {
+                MessageBox.Show("That's correct!", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GenerateQuestion();
+            }
+            else
+            {
+                MessageBox.Show("That's not correct. Keep trying!", "Inorrect", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonD.Enabled = false;
+            }
         }
     }
 }

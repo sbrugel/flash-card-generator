@@ -58,6 +58,7 @@ namespace Flash_Card_Maker
             this.buttonA.TabIndex = 1;
             this.buttonA.Text = "button1";
             this.buttonA.UseVisualStyleBackColor = true;
+            this.buttonA.Click += new System.EventHandler(this.buttonA_Click);
             // 
             // buttonB
             // 
@@ -67,6 +68,7 @@ namespace Flash_Card_Maker
             this.buttonB.TabIndex = 2;
             this.buttonB.Text = "button2";
             this.buttonB.UseVisualStyleBackColor = true;
+            this.buttonB.Click += new System.EventHandler(this.buttonB_Click);
             // 
             // buttonC
             // 
@@ -76,6 +78,7 @@ namespace Flash_Card_Maker
             this.buttonC.TabIndex = 3;
             this.buttonC.Text = "button3";
             this.buttonC.UseVisualStyleBackColor = true;
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonD
             // 
@@ -85,6 +88,7 @@ namespace Flash_Card_Maker
             this.buttonD.TabIndex = 4;
             this.buttonD.Text = "button4";
             this.buttonD.UseVisualStyleBackColor = true;
+            this.buttonD.Click += new System.EventHandler(this.buttonD_Click);
             // 
             // setTitleText
             // 
