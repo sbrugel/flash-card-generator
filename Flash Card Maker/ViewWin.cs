@@ -16,7 +16,7 @@ namespace Flash_Card_Maker
         int listIterator = 0;
         bool isFront = true;
 
-        private static Random rng = new Random();
+        private readonly static Random rng = new Random();
 
         public ViewWin(string loadFrom)
         {
