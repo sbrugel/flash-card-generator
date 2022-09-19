@@ -39,6 +39,7 @@ namespace Flash_Card_Maker
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.exportCSVButton = new System.Windows.Forms.Button();
+            this.versionNumber = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,7 +81,7 @@ namespace Flash_Card_Maker
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 100);
             this.panel1.TabIndex = 3;
@@ -90,7 +91,7 @@ namespace Flash_Card_Maker
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Location = new System.Drawing.Point(12, 118);
+            this.panel2.Location = new System.Drawing.Point(12, 137);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 66);
             this.panel2.TabIndex = 4;
@@ -120,7 +121,7 @@ namespace Flash_Card_Maker
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.exportCSVButton);
-            this.panel3.Location = new System.Drawing.Point(12, 190);
+            this.panel3.Location = new System.Drawing.Point(12, 209);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(176, 66);
             this.panel3.TabIndex = 5;
@@ -145,11 +146,21 @@ namespace Flash_Card_Maker
             this.exportCSVButton.UseVisualStyleBackColor = true;
             this.exportCSVButton.Click += new System.EventHandler(this.exportCSVButton_Click);
             // 
+            // versionNumber
+            // 
+            this.versionNumber.AutoSize = true;
+            this.versionNumber.Location = new System.Drawing.Point(12, 13);
+            this.versionNumber.Name = "versionNumber";
+            this.versionNumber.Size = new System.Drawing.Size(31, 15);
+            this.versionNumber.TabIndex = 6;
+            this.versionNumber.Text = "1.0.1";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 267);
+            this.ClientSize = new System.Drawing.Size(200, 291);
+            this.Controls.Add(this.versionNumber);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -163,6 +174,7 @@ namespace Flash_Card_Maker
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -178,5 +190,6 @@ namespace Flash_Card_Maker
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exportCSVButton;
+        private System.Windows.Forms.Label versionNumber;
     }
 }

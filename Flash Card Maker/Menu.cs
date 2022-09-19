@@ -9,6 +9,8 @@ namespace Flash_Card_Maker
         public Menu()
         {
             InitializeComponent();
+
+            // handler for version checking here
         }
 
         private void button1_Click(object sender, EventArgs e)
