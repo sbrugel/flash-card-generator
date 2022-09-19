@@ -40,6 +40,7 @@ namespace Flash_Card_Maker
             this.addCardButton = new System.Windows.Forms.Button();
             this.cardSetData = new System.Windows.Forms.DataGridView();
             this.saveSetButton = new System.Windows.Forms.Button();
+            this.importButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cardSetData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,17 +135,28 @@ namespace Flash_Card_Maker
             // 
             this.saveSetButton.Location = new System.Drawing.Point(14, 437);
             this.saveSetButton.Name = "saveSetButton";
-            this.saveSetButton.Size = new System.Drawing.Size(346, 23);
+            this.saveSetButton.Size = new System.Drawing.Size(96, 23);
             this.saveSetButton.TabIndex = 10;
             this.saveSetButton.Text = "Save Set";
             this.saveSetButton.UseVisualStyleBackColor = true;
             this.saveSetButton.Click += new System.EventHandler(this.saveSetButton_Click);
+            // 
+            // importButton
+            // 
+            this.importButton.Location = new System.Drawing.Point(264, 437);
+            this.importButton.Name = "importButton";
+            this.importButton.Size = new System.Drawing.Size(96, 23);
+            this.importButton.TabIndex = 11;
+            this.importButton.Text = "Import Set";
+            this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
             // CreateWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 466);
+            this.Controls.Add(this.importButton);
             this.Controls.Add(this.saveSetButton);
             this.Controls.Add(this.cardSetData);
             this.Controls.Add(this.addCardButton);
@@ -178,6 +190,7 @@ namespace Flash_Card_Maker
         private System.Windows.Forms.Button addCardButton;
         private System.Windows.Forms.DataGridView cardSetData;
         private System.Windows.Forms.Button saveSetButton;
+        private System.Windows.Forms.Button importButton;
     }
 }
 

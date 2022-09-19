@@ -76,5 +76,26 @@ namespace Flash_Card_Maker
                 }
             }
         }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Flash Card Set|*.fcards";
+            open.Title = "Import Set";
+            DialogResult res = open.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                using (StreamReader sr = File.OpenText(open.FileName))
+                {
+                    string s = "";
+                    sr.ReadLine(); // don't need the title for this
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        cardSetData.Rows.Add(new object[] { s.Split("|||")[0], s.Split("|||")[1] });
+                    }
+                }
+            }
+        }
     }
 }
