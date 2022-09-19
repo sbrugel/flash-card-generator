@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using HtmlAgilityPack;
 
 namespace Flash_Card_Maker
 {
@@ -9,8 +11,29 @@ namespace Flash_Card_Maker
         public Menu()
         {
             InitializeComponent();
-
-            // handler for version checking here
+            string latestVersion = versionNumber.Text;
+            try
+            {
+                HtmlWeb web = new HtmlWeb();
+                HtmlAgilityPack.HtmlDocument document = web.Load("https://github.com/sbrugel/flash-card-generator/blob/master/VERSION.txt");
+                var nodes = document.DocumentNode.SelectNodes("//td");
+                foreach (var node in nodes)
+                {
+                    if (!node.InnerText.Equals(""))
+                    {
+                        latestVersion = node.InnerText;
+                        break;
+                    }
+                }
+            } catch (Exception ex)
+            {
+                // ignore it - probably no internet
+            }
+            
+            if (!latestVersion.Equals(versionNumber.Text))
+            {
+                versionNumber.Text += " (update available)";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
