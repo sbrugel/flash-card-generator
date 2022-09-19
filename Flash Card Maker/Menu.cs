@@ -102,5 +102,18 @@ namespace Flash_Card_Maker
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Flash Card Set|*.fcards";
+            open.Title = "Edit Set";
+            DialogResult res = open.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                new MultipleChoice(open.FileName).Show();
+            }
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace Flash_Card_Maker
             this.label3 = new System.Windows.Forms.Label();
             this.exportCSVButton = new System.Windows.Forms.Button();
             this.versionNumber = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,11 +120,12 @@ namespace Flash_Card_Maker
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.exportCSVButton);
             this.panel3.Location = new System.Drawing.Point(12, 209);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 66);
+            this.panel3.Size = new System.Drawing.Size(176, 111);
             this.panel3.TabIndex = 5;
             // 
             // label3
@@ -155,11 +157,21 @@ namespace Flash_Card_Maker
             this.versionNumber.TabIndex = 6;
             this.versionNumber.Text = "1.0.1";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(3, 57);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(166, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Multiple Choice";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 291);
+            this.ClientSize = new System.Drawing.Size(200, 332);
             this.Controls.Add(this.versionNumber);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -191,5 +203,6 @@ namespace Flash_Card_Maker
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exportCSVButton;
         private System.Windows.Forms.Label versionNumber;
+        private System.Windows.Forms.Button button4;
     }
 }
