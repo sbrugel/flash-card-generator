@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 
@@ -36,12 +35,12 @@ namespace Flash_Card_Maker
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void createButton_Click(object sender, EventArgs e)
         {
             new CreateWin().Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void editButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Flash Card Set|*.fcards";
@@ -54,11 +53,11 @@ namespace Flash_Card_Maker
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void viewButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Flash Card Set|*.fcards";
-            open.Title = "Edit Set";
+            open.Title = "View Set";
             DialogResult res = open.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -103,11 +102,21 @@ namespace Flash_Card_Maker
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void importCSVButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "CSV|*.csv";
+            open.Title = "Select CSV";
+            DialogResult res = open.ShowDialog();
+
+            // TODO: import CSV and open up contents in CreateWin (untitled set)
+        }
+
+        private void mcButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Flash Card Set|*.fcards";
-            open.Title = "Edit Set";
+            open.Title = "Multiple Choice";
             DialogResult res = open.ShowDialog();
 
             if (res == DialogResult.OK)

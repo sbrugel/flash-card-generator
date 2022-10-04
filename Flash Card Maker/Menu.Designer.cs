@@ -30,17 +30,18 @@ namespace Flash_Card_Maker
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.createButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.viewButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.importCSV = new System.Windows.Forms.Button();
+            this.mcButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.exportCSVButton = new System.Windows.Forms.Button();
             this.versionNumber = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,32 +57,32 @@ namespace Flash_Card_Maker
             this.label1.TabIndex = 0;
             this.label1.Text = "Editor";
             // 
-            // button1
+            // createButton
             // 
-            this.button1.Location = new System.Drawing.Point(3, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.createButton.Location = new System.Drawing.Point(3, 28);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(166, 23);
+            this.createButton.TabIndex = 1;
+            this.createButton.Text = "Create";
+            this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
-            // button2
+            // editButton
             // 
-            this.button2.Location = new System.Drawing.Point(3, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.editButton.Location = new System.Drawing.Point(3, 57);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(166, 23);
+            this.editButton.TabIndex = 2;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.editButton);
+            this.panel1.Controls.Add(this.createButton);
             this.panel1.Location = new System.Drawing.Point(12, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 100);
@@ -91,7 +92,7 @@ namespace Flash_Card_Maker
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.viewButton);
             this.panel2.Location = new System.Drawing.Point(12, 137);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 66);
@@ -107,26 +108,47 @@ namespace Flash_Card_Maker
             this.label2.TabIndex = 0;
             this.label2.Text = "Viewer";
             // 
-            // button3
+            // viewButton
             // 
-            this.button3.Location = new System.Drawing.Point(3, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Open";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.viewButton.Location = new System.Drawing.Point(3, 28);
+            this.viewButton.Name = "viewButton";
+            this.viewButton.Size = new System.Drawing.Size(166, 23);
+            this.viewButton.TabIndex = 2;
+            this.viewButton.Text = "Open";
+            this.viewButton.UseVisualStyleBackColor = true;
+            this.viewButton.Click += new System.EventHandler(this.viewButton_Click);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.importCSV);
+            this.panel3.Controls.Add(this.mcButton);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.exportCSVButton);
             this.panel3.Location = new System.Drawing.Point(12, 209);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 111);
+            this.panel3.Size = new System.Drawing.Size(176, 123);
             this.panel3.TabIndex = 5;
+            // 
+            // importCSV
+            // 
+            this.importCSV.Location = new System.Drawing.Point(3, 57);
+            this.importCSV.Name = "importCSV";
+            this.importCSV.Size = new System.Drawing.Size(166, 23);
+            this.importCSV.TabIndex = 4;
+            this.importCSV.Text = "Import from CSV";
+            this.importCSV.UseVisualStyleBackColor = true;
+            this.importCSV.Click += new System.EventHandler(this.importCSVButton_Click);
+            // 
+            // mcButton
+            // 
+            this.mcButton.Location = new System.Drawing.Point(3, 86);
+            this.mcButton.Name = "mcButton";
+            this.mcButton.Size = new System.Drawing.Size(166, 23);
+            this.mcButton.TabIndex = 3;
+            this.mcButton.Text = "Multiple Choice";
+            this.mcButton.UseVisualStyleBackColor = true;
+            this.mcButton.Click += new System.EventHandler(this.mcButton_Click);
             // 
             // label3
             // 
@@ -157,21 +179,11 @@ namespace Flash_Card_Maker
             this.versionNumber.TabIndex = 6;
             this.versionNumber.Text = "1.0.1";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 57);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(166, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Multiple Choice";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 332);
+            this.ClientSize = new System.Drawing.Size(200, 344);
             this.Controls.Add(this.versionNumber);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -193,16 +205,17 @@ namespace Flash_Card_Maker
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button viewButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exportCSVButton;
         private System.Windows.Forms.Label versionNumber;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button mcButton;
+        private System.Windows.Forms.Button importCSV;
     }
 }
