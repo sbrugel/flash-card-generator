@@ -109,7 +109,10 @@ namespace Flash_Card_Maker
             open.Title = "Select CSV";
             DialogResult res = open.ShowDialog();
 
-            // TODO: import CSV and open up contents in CreateWin (untitled set)
+            if (res == DialogResult.OK)
+            {
+                new CreateWin(open.FileName).Show();
+            }
         }
 
         private void mcButton_Click(object sender, EventArgs e)

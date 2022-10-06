@@ -15,13 +15,28 @@ namespace Flash_Card_Maker
 
             if (!loadFrom.Equals(""))
             {
-                using (StreamReader sr = File.OpenText(loadFrom))
+                if (SubstringFromTo(loadFrom, loadFrom.Length - 3, loadFrom.Length).Equals("csv"))
                 {
-                    string s = "";
-                    setNameText.Text = sr.ReadLine();
-                    while ((s = sr.ReadLine()) != null)
+                    using (StreamReader sr = File.OpenText(loadFrom))
                     {
-                        cardSetData.Rows.Add(new object[] { s.Split("|||")[0], s.Split("|||")[1] });
+                        string s = "";
+                        while ((s = sr.ReadLine()) != null)
+                        {
+                            // substrings remove the quotes from each item
+                            cardSetData.Rows.Add(new object[] { SubstringFromTo(s.Split(",")[0], 1, s.Split(",")[0].Length - 1), 
+                                SubstringFromTo(s.Split(",")[1], 1, s.Split(",")[1].Length - 1) });
+                        }
+                    }
+                } else
+                {
+                    using (StreamReader sr = File.OpenText(loadFrom))
+                    {
+                        string s = "";
+                        setNameText.Text = sr.ReadLine();
+                        while ((s = sr.ReadLine()) != null)
+                        {
+                            cardSetData.Rows.Add(new object[] { s.Split("|||")[0], s.Split("|||")[1] });
+                        }
                     }
                 }
             }
@@ -95,6 +110,29 @@ namespace Flash_Card_Maker
                         cardSetData.Rows.Add(new object[] { s.Split("|||")[0], s.Split("|||")[1] });
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Finds substring between indices (if that's how the plural is spelt!)
+        /// </summary>
+        /// <param name="str">The string to search.</param>
+        /// <param name="from">The starting index of the string to search</param>
+        /// <param name="to">The ending index of the string, stop searching here</param>
+        /// <returns>The substring of str from the start to end index specified by the code</returns>
+        private string SubstringFromTo(string str, int from, int to)
+        {
+            try
+            {
+                if (str.Substring(from, to - from).Equals(""))
+                {
+                    return "None";
+                }
+                return str.Substring(from, to - from);
+            }
+            catch (Exception ex)
+            {
+                return "None";
             }
         }
     }
